@@ -47,5 +47,14 @@ function flipCard(cardId) {
   };
 };
 
-flipCard(0);
-flipCard(1);
+function createBoard(){
+	for (let i = 0; i < cards.length; i++) {
+const cardElement = document.createElement('img');
+cardElement.setAttribute('src', "images/back.png");
+cardElement.setAttribute('data-id', i);
+cardElement.addEventListener('click', flipCard);
+cardElement.appendChild(i);
+}
+};
+
+createBoard();
